@@ -6,14 +6,20 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+use std::fmt::Display;
 
-struct Wrapper {
-    value: u32,
+struct Wrapper<T>
+where
+    T: Display,
+{
+    value: T,
 }
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
+impl<T> Wrapper<T>
+where
+    T: Display,
+{
+    pub fn new(value: T) -> Self {
         Wrapper { value }
     }
 }
